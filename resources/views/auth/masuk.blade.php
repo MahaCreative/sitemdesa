@@ -3,8 +3,8 @@
 @section('title', 'Masuk')
 
 @section('header')
-    <h1 class="text-white">Masuk</h1>
-    <p class="text-lead text-light">Silahkan Masuk Terlebih Dahulu</p>
+<h1 class="text-white">Masuk</h1>
+<p class="text-lead text-light">Silahkan Masuk Terlebih Dahulu</p>
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@
                     <small>Masuk</small>
                 </div>
                 <div class="text-center mb-4">
-                    <img height="150px" src="{{ url('/storage/logo.png') }}" alt="logo">
+                    <img height="150px" src="{{ url('/storage/favicon.png') }}" alt="logo">
                 </div>
                 <form role="form" action="{{ route('masuk') }}" method="POST">
                     @csrf
@@ -25,11 +25,13 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                             </div>
-                            <input class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email" type="email">
+                            <input class="form-control @error('email') is-invalid @enderror" name="email"
+                                value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email"
+                                type="email">
                             @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
                     </div>
@@ -38,11 +40,13 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                             </div>
-                            <input class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password" type="password" value="{{ old('password') }}">
+                            <input class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="current-password" placeholder="Password" type="password"
+                                value="{{ old('password') }}">
                             @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
                     </div>
