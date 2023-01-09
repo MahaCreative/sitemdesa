@@ -1,5 +1,5 @@
 @php
-    $desa = App\Desa::find(1);
+$desa = App\Desa::find(1);
 @endphp
 <!--
 
@@ -61,38 +61,40 @@
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
                     @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <div class="media align-items-center">
-                                    <span class="avatar avatar-sm">
-                                        <img alt="{{ asset(Storage::url(auth()->user()->foto_profil)) }}" src="{{ asset(Storage::url(auth()->user()->foto_profil)) }}">
-                                    </span>
-                                    <div class="media-body ml-2 d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->nama }}</span>
-                                    </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <div class="media align-items-center">
+                                <span class="avatar avatar-sm">
+                                    <img alt="{{ asset(Storage::url(auth()->user()->foto_profil)) }}"
+                                        src="{{ asset(Storage::url(auth()->user()->foto_profil)) }}">
+                                </span>
+                                <div class="media-body ml-2 d-none d-lg-block">
+                                    <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->nama }}</span>
                                 </div>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                                <a href="{{ route('profil') }}" class="dropdown-item">
-                                    <i class="ni ni-single-02"></i>
-                                    <span>Profil Saya</span>
-                                </a>
-                                <a href="{{ route('pengaturan') }}" class="dropdown-item">
-                                    <i class="ni ni-settings-gear-65"></i>
-                                    <span>Pengaturan</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="{{ route('keluar') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('form-keluar').submit();">
-                                    <i class="ni ni-user-run"></i>
-                                    <span>Keluar</span>
-                                </a>
-
-                                <form id="form-keluar" action="{{ route('keluar') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
                             </div>
-                        </li>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                            <a href="{{ route('profil') }}" class="dropdown-item">
+                                <i class="ni ni-single-02"></i>
+                                <span>Profil Saya</span>
+                            </a>
+                            <a href="{{ route('pengaturan') }}" class="dropdown-item">
+                                <i class="ni ni-settings-gear-65"></i>
+                                <span>Pengaturan</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="{{ route('keluar') }}" class="dropdown-item"
+                                onclick="event.preventDefault(); document.getElementById('form-keluar').submit();">
+                                <i class="ni ni-user-run"></i>
+                                <span>Keluar</span>
+                            </a>
+
+                            <form id="form-keluar" action="{{ route('keluar') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                     @endauth
                 </ul>
             </div>
@@ -111,12 +113,13 @@
                 <div class="row align-items-center justify-content-xl-between">
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-left text-muted">
-                            &copy; {{ date('Y') }} <a href="{{ config('app.url') }}" class="font-weight-bold ml-1" target="_blank">Desa {{ $desa->nama_desa }}</a>
+                            &copy; {{ date('Y') }} <a href="{{ config('app.url') }}" class="font-weight-bold ml-1"
+                                target="_blank">Desa {{ $desa->nama_desa }}</a>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-right text-muted">
-                            Powered By MCDEV
+                            Powered By Rosdiana
                         </div>
                     </div>
                 </div>
